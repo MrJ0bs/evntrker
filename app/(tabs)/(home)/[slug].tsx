@@ -14,7 +14,7 @@ export default function Details() {
     return slugArray;
   }
   const result = parseSlug(slug.toString())
-  console.log(result);
+  // console.log(result);
   const EventTimeLine: React.FC = () => {
     return (
       <View className="flex flex-row items-center mt-6 mb-4 justify-between w-full">

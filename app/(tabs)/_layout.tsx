@@ -11,8 +11,8 @@ function TabBarIcon(props: {
 }
 
 export default function TabLayout() {
-  const pathname = usePathname()
-  console.log(pathname)
+  // const pathname = usePathname()
+  // console.log(pathname)
   return (
     <Tabs
       initialRouteName='(home)'
