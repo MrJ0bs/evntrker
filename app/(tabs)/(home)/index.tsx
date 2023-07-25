@@ -10,14 +10,14 @@ interface EventDates {
 }
 
 export const EventDates: React.FC<EventDates> = ({ date, day, isSelected }) => {
-    const [selected,setSelected] = React.useState(false)
+    // const [selected, setSelected] = React.useState(false)
     return (
-        <TouchableOpacity onPress={() => setSelected(!selected)}>
+        <TouchableOpacity onPress={() => {}}>
             <View className="p-5 flex items-center justify-between flex-col">
                 <Text className="font-bold text-lg">
                     {date.toString()}
                 </Text>
-                <View className={selected ? `w-2 h-2 bg-red-500 absolute top-4 rounded-lg right-4` : `w-2 h-2 bg-transparent absolute top-4 rounded-lg right-4`} />
+                <View className={isSelected ? `w-2 h-2 bg-red-500 absolute top-4 rounded-lg right-4` : `w-2 h-2 bg-transparent absolute top-4 rounded-lg right-4`} />
                 <Text className="font-thin text-base">
                     {day}
                 </Text>
@@ -26,30 +26,108 @@ export const EventDates: React.FC<EventDates> = ({ date, day, isSelected }) => {
     )
 }
 
-export const EventTimeLine: React.FC = () => {
-    return (
-        <View className="flex flex-row items-center mt-6 mb-4 justify-between w-full">
-            <View className="pl-4 pr-8 py-3 bg-[#F02D2E] rounded-r-3xl">
-                <Text className="text-lg uppercase font-bold text-white ">sep</Text>
-            </View>
-            <ScrollView className="w-full" showsHorizontalScrollIndicator={false} horizontal={true}>
-                <View className="w-full flex flex-row">
-                    <EventDates date={'6'} day="Sun" />
-                    <EventDates date={'7'} day="Mon" />
-                    <EventDates date={'8'} day="Tue" />
-                    <EventDates date={'9'} day="Wed" />
-                    <EventDates date={'10'} day="Thu" />
-                    <EventDates date={'11'} day="Fri" />
-                    <EventDates date={'12'} day="Sat" />
-                    <EventDates date={'13'} day="Sun" />
-                    <EventDates date={'14'} day="Mon" />
-                </View>
-            </ScrollView>
-        </View>
-    )
-}
+// const timelineData = {
+//     '6': {
+//         'Day': 'Sun',
+//         hasEvent: false,
+//     },
+//     '7': {
+//         'Day': 'Mon',
+//         hasEvent: {
+//             selected: true,
+//             eventName: {
+
+//             }
+//         }
+//     },
+//     '8': 'Tue',
+//     '9': 'Wed',
+//     '10': 'Thu',
+//     '11': 'Fri',
+//     '12': 'Sat',
+//     '13': 'Sun',
+//     '14': 'Mon',
+// }
+
+// const tdata: Props[] = [
+//     {
+//         title: '',
+//         beginningT: '',
+//         endingT: '',
+//         eventDates: '',
+//         location: '',
+//         hasEvent: ''
+//     },
+//     {
+//         title: '',
+//         beginningT: '',
+//         endingT: '',
+//         eventDates: '',
+//         location: '',
+//         hasEvent: ''
+//     },
+//     {
+//         title: '',
+//         beginningT: '',
+//         endingT: '',
+//         eventDates: '',
+//         location: '',
+//         hasEvent: ''
+//     },
+//     {
+//         title: '',
+//         beginningT: '',
+//         endingT: '',
+//         eventDates: '',
+//         location: '',
+//         hasEvent: ''
+//     },
+//     {
+//         title: '',
+//         beginningT: '',
+//         endingT: '',
+//         eventDates: '',
+//         location: '',
+//         hasEvent: ''
+//     },
+//     {
+//         title: '',
+//         beginningT: '',
+//         endingT: '',
+//         eventDates: '',
+//         location: '',
+//         hasEvent: ''
+//     },
+//     {
+//         title: '',
+//         beginningT: '',
+//         endingT: '',
+//         eventDates: '',
+//         location: '',
+//         hasEvent: ''
+//     },
+// ]
+
+
+// export const EventTimeLine: React.FC = () => {
+//     return (
+//         <View className="flex flex-row items-center mt-6 mb-4 justify-between w-full">
+//             <View className="pl-4 pr-8 py-3 bg-[#F02D2E] rounded-r-3xl">
+//                 <Text className="text-lg uppercase font-bold text-white ">sep</Text>
+//             </View>
+//             <ScrollView className="w-full" showsHorizontalScrollIndicator={false} horizontal={true}>
+//                 <View className="w-full flex flex-row">
+//                     {
+//                         timelineData.forEach((element: EventDates) => <EventDates date={element.date} day={element.day} />);
+//                     }
+//                 </View>
+//             </ScrollView>
+//         </View>
+//     )
+// }
 
 export interface Props {
+    hasEvent?: boolean
     eventDates: EventDates;
     title: string;
     beginningT: string;

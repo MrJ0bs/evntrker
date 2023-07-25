@@ -8,7 +8,7 @@ export default function Details() {
   const { slug } = useLocalSearchParams()
 
   const data = slug.toString().includes('7')
-  
+
   console.log(data);
 
   const EventTimeLine: React.FC = () => {
@@ -20,9 +20,9 @@ export default function Details() {
         <ScrollView className="w-full" showsHorizontalScrollIndicator={false} horizontal={true}>
           <View className="w-full flex flex-row">
             <EventDates date={'6'} day="Sun" />
-            <EventDates date={'7'} day="Mon" />
+            <EventDates date={'7'} day="Mon" isSelected={true} />
             <EventDates date={'8'} day="Tue" />
-            <EventDates date={'9'} day="Wed" />
+            <EventDates date={'9'} day="Wed" isSelected={true} />
             <EventDates date={'10'} day="Thu" />
             <EventDates date={'11'} day="Fri" />
             <EventDates date={'12'} day="Sat" />
