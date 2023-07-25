@@ -12,7 +12,7 @@ interface EventDates {
 export const EventDates: React.FC<EventDates> = ({ date, day, isSelected }) => {
     // const [selected, setSelected] = React.useState(false)
     return (
-        <TouchableOpacity onPress={() => {}}>
+        <TouchableOpacity onPress={() => { }}>
             <View className="p-5 flex items-center justify-between flex-col">
                 <Text className="font-bold text-lg">
                     {date.toString()}
@@ -134,6 +134,12 @@ export interface Props {
     endingT: string;
     location: string;
 }
+type ImagesType = Record<'Meeting Auto' | 'Air Legend' | 'Halloween Party', any>;
+const images: ImagesType = {
+    'Meeting Auto': require('../../../assets/images/Meeting.png'),
+    'Air Legend': require('../../../assets/images/jet.png'),
+    'Halloween Party': require('../../../assets/images/halo.png')
+}
 
 const EventCard: React.FC<Props> = ({ eventDates, beginningT, endingT, location, title }) => {
     const router = useRouter()
@@ -147,7 +153,7 @@ const EventCard: React.FC<Props> = ({ eventDates, beginningT, endingT, location,
             <View className="self-start">
                 <EventDates date={eventDates.date} day={eventDates.day} />
             </View>
-                <Image source={require('../../../assets/images/jet.png')} className="w-1/3 h-full m-2 p-3 rounded-2xl" resizeMode="contain" />
+            <Image source={images[title as keyof ImagesType]} className="w-1/3 h-full m-2 p-3 rounded-2xl" resizeMode="contain" />
             <View className="flex flex-col w-full px-5">
                 <Text className="text-base font-bold pb-2">
                     {title}
