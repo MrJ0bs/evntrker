@@ -61,7 +61,7 @@ const EventCard: React.FC<Props> = ({ eventDates, beginningT, endingT, location,
     const router = useRouter()
     return (
         <TouchableOpacity onPress={() => router.push({
-            pathname: '/(tabs)/home/[slug]',
+            pathname: '/(tabs)/(home)/[slug]',
             params: {
                 slug: `${title} ${location} ${beginningT} ${endingT} ${eventDates.day} ${eventDates.date} `
             }

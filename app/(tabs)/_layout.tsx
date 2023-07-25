@@ -15,13 +15,13 @@ export default function TabLayout() {
   console.log(pathname)
   return (
     <Tabs
-      initialRouteName='home'
+      initialRouteName='(home)'
       screenOptions={{
         tabBarActiveTintColor: '#3759EE',
         tabBarShowLabel: false
       }}>
       <Tabs.Screen
-        name="home"
+        name="(home)"
         options={{
           title: 'Upcoming Events',
           headerTitleStyle: {

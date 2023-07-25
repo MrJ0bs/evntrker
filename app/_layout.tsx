@@ -24,19 +24,17 @@ export default function RootLayout() {
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
     ...FontAwesome.font,
   });
-  const rootNavigationState = useRootNavigationState();
 
-
+  
   // Expo Router uses Error Boundaries to catch errors in the navigation tree.
   useEffect(() => {
     if (error) throw error;
-    if (!rootNavigationState?.key) {
-      return;
-  }
+
   }, [error]);
 
   useEffect(() => {
     if (loaded) {
+
       SplashScreen.hideAsync();
     }
   }, [loaded]);
